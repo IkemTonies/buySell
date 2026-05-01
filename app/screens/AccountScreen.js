@@ -5,8 +5,9 @@ import { FlatList, StyleSheet, View } from "react-native";
 import colors from "../config/colors";
 import Icon from "../components/Icon";
 import ListItemSeparator from "../components/ListItemSeparator";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-const menuItmes = [
+const menuItems = [
   {
     title: "My Listings",
     Icon: {
@@ -20,12 +21,13 @@ const menuItmes = [
       name: "email",
       backgroundColor: colors.primary,
     },
+    targetScreen: "Messages",
   },
 ];
 
-function AccountScreen(props) {
+function AccountScreen({ navigation }) {
   return (
-    <Screen style={styles.screen}>
+    <SafeAreaView style={styles.screen}>
       <View style={styles.container}>
         <ListItem
           title="Vera Mosh"
@@ -35,8 +37,8 @@ function AccountScreen(props) {
       </View>
       <View>
         <FlatList
-          data={menuItmes}
-          keyExtractor={(menuItmes) => menuItmes.title}
+          data={menuItems}
+          keyExtractor={(menuItems) => menuItems.title}
           ItemSeparatorComponent={ListItemSeparator}
           renderItem={({ item }) => (
             <ListItem
@@ -47,6 +49,7 @@ function AccountScreen(props) {
                   backgroundColor={item.Icon.backgroundColor}
                 />
               }
+              onPress={() => navigation.navigate(item.targetScreen)}
             />
           )}
         />
@@ -55,7 +58,7 @@ function AccountScreen(props) {
         title="Log Out"
         IconComponet={<Icon name="logout" backgroundColor="#ffe66d" />}
       />
-    </Screen>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({

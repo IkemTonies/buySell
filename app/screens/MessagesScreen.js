@@ -9,14 +9,14 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const initialMessages = [
   {
     id: 1,
-    title: "T1",
-    description: "D1",
+    title: "Mosh Vera",
+    description: "Hello, can you tell me more about the product",
     image: require("../assets/FaceImage2.jpg"),
   },
   {
     id: 2,
-    title: "T2",
-    description: "D2",
+    title: "Mosh Vera",
+    description: "Please can I pay on delivery?",
     image: require("../assets/FaceImage2.jpg"),
   },
 ];

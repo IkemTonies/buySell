@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     color: colors.medium,
   },
   title: {
-    fontWeight: "600",
+    fontWeight: "bold",
   },
 });
 
